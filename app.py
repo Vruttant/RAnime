@@ -24,7 +24,7 @@ def getRandomAnimeList():
     global filter_year
     global filter_season
     global anime_list_slice
-    filter_year = getRandomYear(random.randint(5,10))
+    filter_year = getRandomYear(random.randint(1,8))
     filter_season = getRandomSeason()
     random_animes = jikan.season(year=filter_year, season=filter_season)
     anime_list_slice = getRandomSlice(len(random_animes["anime"]))
