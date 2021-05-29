@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="text-center">
+        <div class="my-3"><h2>RAnime - Generate Random Anime<i class="bi bi-arrow-repeat ps-2" onClick="window.location.reload();"></i></h2></div>
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            {% for anime in anime_list["anime"][:6] %}
+                <div class="col">
+                    <a href="{{ anime["url"] }}" class="text-decoration-none" target="_blank">
+                        <div class="card mb-3 bg-secondary border-white rounded-3" style="max-width: 540px;">
+                            <div class="row g-0">
+                                <div class="col-md-5">
+                                    <img class="rounded-3" src="{{ anime["image_url"] }}"
+                                         style="max-height: 318px; max-width: 225px" alt="...">
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="card-body">
+                                        <h6 class="card-title text-light">{{ anime["title"] }}</h6>
+                                        <div class="flex-wrap">
+                                            {% for genre in anime['genres'] %}
+                                                <span class="d-inline-block rounded-pill text-dark border border-2 small px-2 py-1 text-white bg-pill mb-1">
+                                                {{ genre["name"] }}
+                                            </span>
+                                            {% endfor %}
+                                        </div>
+                                        <div class="row row-cols-2 row-cols-md-2 g-1 mt-auto">
+                                            <div class="col">
+                                                <div class="card border-0 bg-secondary">
+                                                    <div class="card-body p-2">
+                                                        <h6 class="card-title text-white">Score</h6>
+                                                        <span class="card-text text-white fs-5">
+                                                            {% if (anime["score"] != None) %}
+                                                                {{ anime["score"] }}
+                                                            {% else %}
+                                                                -
+                                                            {% endif %}
+                                                        </span>
+                                                        <small class="text-white">/10</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card border-0 bg-secondary">
+                                                    <div class="card-body p-2">
+                                                        <h6 class="card-title text-white">Episodes</h6>
+                                                        <span class="card-text text-white fs-5">
+                                                            {% if (anime["episodes"] != None) %}
+                                                                {{ anime["episodes"] }}
+                                                            {% else %}
+                                                                N/A
+                                                            {% endif %}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card border-0 bg-secondary">
+                                                    <div class="card-body p-2">
+                                                        <h6 class="card-title text-white">Season</h6>
+                                                        <span class="card-text text-white fs-5">
+                                                            {{ season.title() }}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card border-0 bg-secondary">
+                                                    <div class="card-body p-2">
+                                                        <h6 class="card-title text-white">Year</h6>
+                                                        <span class="card-text text-white fs-5">
+                                                            {{ year }}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            {% endfor %}
+        </div>
+
+
+    </div>
+{% endblock content %}
