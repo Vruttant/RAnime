@@ -5,6 +5,9 @@ from datetime import date
 app = Flask(__name__)
 jikan = Jikan()
 
+def getRandomSlice(length):
+    random_slice = random.randint(1, length - 5)
+    return random_slice
 
 
 def getRandomYear(years_old=5):
@@ -20,14 +23,16 @@ def getRandomSeason():
 def getRandomAnimeList():
     global filter_year
     global filter_season
+    global anime_list_slice
     filter_year = getRandomYear(random.randint(5,10))
     filter_season = getRandomSeason()
     random_animes = jikan.season(year=filter_year, season=filter_season)
+    anime_list_slice = getRandomSlice(len(random_animes["anime"]))
     return random_animes
 
 @app.route('/')
 def home():
-    return render_template('home.html', title="Home", anime_list=getRandomAnimeList(), season=filter_season, year=filter_year)
+    return render_template('home.html', title="Home", anime_list=getRandomAnimeList(), season=filter_season, year=filter_year, anime_slice=anime_list_slice)
 
 @app.route('/about')
 def about():

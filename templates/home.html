@@ -3,7 +3,7 @@
     <div class="text-center">
         <div class="my-3"><h2>RAnime - Generate Random Anime<i class="bi bi-arrow-repeat ps-2" onClick="window.location.reload();"></i></h2></div>
         <div class="row row-cols-1 row-cols-md-2 g-4">
-            {% for anime in anime_list["anime"][:6] %}
+            {% for anime in anime_list["anime"][anime_slice:anime_slice + 6] %}
                 <div class="col">
                     <a href="{{ anime["url"] }}" class="text-decoration-none" target="_blank">
                         <div class="card mb-3 bg-secondary border-white rounded-3" style="max-width: 540px;">
