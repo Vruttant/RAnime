@@ -13,36 +13,10 @@
     {% endif %}
 </head>
 <body class="bg-dark text-light">
-{#    <header>#}
-{#        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-dark border-bottom box-shadow mb-3">#}
-{#            <div class="container">#}
-{#                <a class="navbar-brand text-light" href="{{ url_for('home') }}">RAnime</a>#}
-{#                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"#}
-{#                        aria-expanded="false" aria-label="Toggle navigation">#}
-{#                    <span class="navbar-toggler-icon"></span>#}
-{#                </button>#}
-{#                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">#}
-{#                    <ul class="navbar-nav flex-grow-1">#}
-{#                        <li class="nav-item">#}
-{#                            <a class="nav-link text-light" href="{{ url_for('home') }}">Home</a>#}
-{#                        </li>#}
-{#                        <li class="nav-item">#}
-{#                            <a class="nav-link text-light" href="{{ url_for('about') }}">About</a>#}
-{#                        </li>#}
-{#                    </ul>#}
-{#                </div>#}
-{#            </div>#}
-{#        </nav>#}
-{#    </header>#}
     <div class="container">
         <main role="main" class="pb-3">
             {% block content %}{% endblock %}
         </main>
     </div>
-{#    <footer class="border-top bg-dark footer text-light">#}
-{#        <div class="container">#}
-{#            &copy; 2021 - RAnime#}
-{#        </div>#}
-{#    </footer>#}
 </body>
 </html>

@@ -1,7 +1,8 @@
 {% extends "layout.html" %}
 {% block content %}
     <div class="text-center">
-        <div class="my-3"><h2>RAnime - Generate Random Anime<i class="bi bi-arrow-repeat ps-2" onClick="window.location.reload();"></i></h2></div>
+        <div class="my-3"><h2>RAnime - Generate Random Anime Shows</h2></div>
+        <div class="mb-3"><button type="button" class="btn btn-secondary" onClick="window.location.reload();"><i class="bi bi-arrow-repeat pe-2"></i>Refresh List</button></div>
         <div class="row row-cols-1 row-cols-md-2 g-4">
             {% for anime in anime_list["anime"][anime_slice:anime_slice + 6] %}
                 <div class="col">
